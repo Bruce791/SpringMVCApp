@@ -7,6 +7,7 @@ public class Person {
     @NotEmpty(message = "The field must not be empty")
     @Size(min = 3, max = 15, message = "Name length must be between 3-15 characters")
     private String name;
+    @NotEmpty(message = "The field must not be empty")
     @Min(value = 0, message = "Age cannot be negative")
     @Max(value = 150, message = "Age cannot be more than 150")
     private int age;
