@@ -1,5 +1,6 @@
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <body>
-<h2>Hello World!</h2>
+<h1> TEST PAGE </h1>
+</div>
 </body>
 </html>

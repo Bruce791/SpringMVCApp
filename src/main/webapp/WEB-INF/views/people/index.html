@@ -5,15 +5,36 @@
     <title>All people</title>
 </head>
 <body>
+<div align="center">
+    <h1>People list</h1>
+    <a href="/people/new">Create new Person</a>
+    </br></br>
+    <table border="1" cellpadding="10">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Action</th>
+            </tr>
+        </thead>
 
-<div th:each="person : ${people}">
-<a th:href="@{/people/{id}(id=${person.getId()})}"
-        th:text="${person.getName() + ' , ' + person.getAge()}"> NAME AND AGE </a>
+        <tbody>
+            <tr th:each="person : ${people}">
+                <td>
+                    <a th:href="@{/people/{id}(id=${person.getId()})}"
+                       th:text="${person.id}">ID</a>
+                </td>
+                <td align="center" th:text="${person.name}">NAME</td>
+                <td align="center" th:text="${person.age}">AGE</td>
+                <td align="center" th:text="${person.email}">EMAIL</td>
+                <td align="center">
+                    <a th:href="@{/people/{id}/edit (id=${person.getId()})}">Edit</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
 </div>
-<br/>
-<hr/>
-
-<a href="/people/new"> Create new person</a>
-
 </body>
 </html>
